@@ -4,7 +4,8 @@ Write a console program that allows a customer to order pizzas.
 
 User Stories
 
-* I want to order cheese pizzas ($6) and see the total cost of my order
+* I want to order cheese pizzas ($6) and get a receipt with the total cost of my order
+* I want my receipt to list the pizzas I ordered with price per pizza
 * I want to order pepperoni pizzas ($7)
 * I want to add these ingredients ($1) to a cheese pizza: pepperoni, onions, mushrooms, green pepper, sausage, ham, olives, beef
 * I want to order a large pizza ($9) with any ingredients ($2)
