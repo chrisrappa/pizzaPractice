@@ -2,17 +2,19 @@
 
 public class Order {
 
-  double cost;
+  int i;
+  double cost = 0;
+  String pizzas = "";
 
-  public void printReceipt() {
-
-
-  }
 
   public void withCheesePizza(int numPizzas) {
 
+
     CheesePizza cheesePizza = new CheesePizza();
     cost += numPizzas * cheesePizza.addPrice();
+    for(i = 0; i < numPizzas; i++){
+      pizzas += "\n" + " Cheese Pizza " + cheesePizza.addPrice();
+    }
 
   }
 
@@ -20,18 +22,24 @@ public class Order {
 
     PepperoniPizza pepperoniPizza = new PepperoniPizza();
     cost += numPizzas * pepperoniPizza.addPrice();
-
+    for(i = 0; i < numPizzas; i++){
+      pizzas += "\n" + " Pepperoni Pizza " + pepperoniPizza.addPrice();
+    }
 
   }
 
 
   public String total() {
-    // calculated the total for the order by multiplying numOfCheesePizzas and the cost of one pizza
-    // turn that value into the correct string ($ and . and 00)
-    // return
 
     String totalCost = Double.toString(cost);
     return (totalCost);
+
+  }
+
+  public String printReceipt() {
+
+    String totalOrder = total() + "\n" + pizzas;
+    return (totalOrder);
   }
 
 }

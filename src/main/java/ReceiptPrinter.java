@@ -2,14 +2,16 @@
 import java.io.PrintStream;
 
 public class ReceiptPrinter {
+  PrintStream printStream;
+  Order order;
+
   public ReceiptPrinter(PrintStream printStream, Order order) {
-
-    String total = order.total();
-    printStream.println(total);
-
+    this.printStream = printStream;
+    this.order = order;
   }
 
-  public static void print() {
-
+  public void print() {
+    String total = order.printReceipt();
+    printStream.println("Total cost is " + total);
   }
 }

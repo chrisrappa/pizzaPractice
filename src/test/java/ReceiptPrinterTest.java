@@ -19,14 +19,15 @@ public class ReceiptPrinterTest{
   public void shouldPrintReceiptForSixDollarsWhenOrderHasTotalPriceOfSixDollars() {
     Order order = new Order();
     PrintStream printStream = mock(PrintStream.class);
+    order.withCheesePizza(1);
     ReceiptPrinter receiptPrinter = new ReceiptPrinter(printStream, order);
     receiptPrinter.print();
 
-    verify(printStream).println("$6.00");
+    verify(printStream).println("Total cost is 6.0\n\n Cheese Pizza 6.0");
   }
 
   @Test
-  void receiptShouldListMoreThanOnePizzaOrderedWithPricePerPizza() {
+  public void receiptShouldListMoreThanOnePizzaOrderedWithPricePerPizza() {
       Order order = new Order();
       PrintStream printStream = mock(PrintStream.class);
       ReceiptPrinter receiptPrinter = new ReceiptPrinter(printStream, order);
@@ -34,4 +35,5 @@ public class ReceiptPrinterTest{
 
       verify(printStream).println();
   }
+
 }
