@@ -1,10 +1,9 @@
 import Interfaces.Pizza;
 
-public class CheesePizza implements Pizza {
+public class PepperoniPizza implements Pizza {
 
   @Override
   public double addPrice() {
-    return 6.00;
+    return 7.00;
   }
 }
-

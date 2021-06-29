@@ -1,4 +1,4 @@
-Pizza
+Interfaces.Pizza
 =====
 Write a console program that allows a customer to order pizzas.
 

@@ -1,2 +1,7 @@
-package Interfaces;public interface Pizza {
+package Interfaces;
+
+public interface Pizza {
+
+  double addPrice();
+
 }
