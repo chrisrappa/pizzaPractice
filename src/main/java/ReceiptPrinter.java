@@ -12,6 +12,6 @@ public class ReceiptPrinter {
 
   public void print() {
     String total = order.printReceipt();
-    printStream.println("Total cost is " + total);
+    printStream.println(total);
   }
 }

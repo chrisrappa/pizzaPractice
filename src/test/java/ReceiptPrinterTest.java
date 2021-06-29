@@ -25,15 +25,33 @@ public class ReceiptPrinterTest{
 
     verify(printStream).println("Total cost is 6.0\n\n Cheese Pizza 6.0");
   }
+//
+//  @Test
+//  public void receiptShouldListMoreThanOnePizzaOrderedWithPricePerPizza() {
+//      Order order = new Order();
+//      PrintStream printStream = mock(PrintStream.class);
+//      ReceiptPrinter receiptPrinter = new ReceiptPrinter(printStream, order);
+//      receiptPrinter.print();
+//
+//      verify(printStream).println();
+//  }
 
   @Test
-  public void receiptShouldListMoreThanOnePizzaOrderedWithPricePerPizza() {
-      Order order = new Order();
-      PrintStream printStream = mock(PrintStream.class);
-      ReceiptPrinter receiptPrinter = new ReceiptPrinter(printStream, order);
-      receiptPrinter.print();
+  public void receiptShouldPrintEachItemOrderedWithDollarSignsAndTotalAtTheBottom(){
+    Order order = new Order();
+    order.withCheesePizza(1);
+    order.withPepperoniPizza(1);
 
-      verify(printStream).println();
+    PrintStream printStream = mock(PrintStream.class);
+    ReceiptPrinter receiptPrinter = new ReceiptPrinter(printStream, order);
+    receiptPrinter.print();
+
+    verify(printStream).println( "\nCheese Pizza $6.00" +
+    "\nPepperoni Pizza $7.00" +
+    "\nTotal cost is: $13.00");
+
+//    Program does what I want it to but this test fails and I'm not sure why, says "different Argument(s)"
+
   }
 
 }

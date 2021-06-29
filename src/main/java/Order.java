@@ -13,7 +13,7 @@ public class Order {
     CheesePizza cheesePizza = new CheesePizza();
     cost += numPizzas * cheesePizza.addPrice();
     for(i = 0; i < numPizzas; i++){
-      pizzas += "\n" + " Cheese Pizza " + cheesePizza.addPrice();
+      pizzas += "\n" + " Cheese Pizza " + "$" + String.format("%.2f", cheesePizza.addPrice());
     }
 
   }
@@ -23,22 +23,22 @@ public class Order {
     PepperoniPizza pepperoniPizza = new PepperoniPizza();
     cost += numPizzas * pepperoniPizza.addPrice();
     for(i = 0; i < numPizzas; i++){
-      pizzas += "\n" + " Pepperoni Pizza " + pepperoniPizza.addPrice();
+      pizzas += "\n" + " Pepperoni Pizza " + "$" + String.format("%.2f", pepperoniPizza.addPrice());
     }
 
   }
 
-
   public String total() {
 
-    String totalCost = Double.toString(cost);
+    String totalCost = String.format("%.2f", cost);
+//    System.out.println(totalCost);
     return (totalCost);
 
   }
 
   public String printReceipt() {
 
-    String totalOrder = total() + "\n" + pizzas;
+    String totalOrder = pizzas + " \n Total cost is: $" + total();
     return (totalOrder);
   }
 
