@@ -7,23 +7,25 @@ public class Order {
   String pizzas = "";
 
 
-  public void withCheesePizza(int numPizzas) {
+  public void withCheesePizza(int numPizzas, String extraIngredient) {
 
 
     CheesePizza cheesePizza = new CheesePizza();
+    String additions = cheesePizza.addIngredient(extraIngredient, 1.00);
     cost += numPizzas * cheesePizza.addPrice();
     for(i = 0; i < numPizzas; i++){
-      pizzas += "\n" + " Cheese Pizza " + "$" + String.format("%.2f", cheesePizza.addPrice());
+      pizzas += "Cheese Pizza " + additions  + "$" + String.format("%.2f", cheesePizza.addPrice()) + "\n";
     }
 
   }
 
-  public void withPepperoniPizza(int numPizzas) {
+  public void withPepperoniPizza(int numPizzas, String extraIngredient) {
 
     PepperoniPizza pepperoniPizza = new PepperoniPizza();
+    pepperoniPizza.addIngredient(extraIngredient, 1.00);
     cost += numPizzas * pepperoniPizza.addPrice();
     for(i = 0; i < numPizzas; i++){
-      pizzas += "\n" + " Pepperoni Pizza " + "$" + String.format("%.2f", pepperoniPizza.addPrice());
+      pizzas += "Pepperoni Pizza " + "$" + String.format("%.2f", pepperoniPizza.addPrice()) + "\n";
     }
 
   }
@@ -31,14 +33,13 @@ public class Order {
   public String total() {
 
     String totalCost = String.format("%.2f", cost);
-//    System.out.println(totalCost);
     return (totalCost);
 
   }
 
   public String printReceipt() {
 
-    String totalOrder = pizzas + " \n Total cost is: $" + total();
+    String totalOrder = pizzas + "Total cost is: $" + total();
     return (totalOrder);
   }
 
