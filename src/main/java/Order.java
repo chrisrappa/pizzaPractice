@@ -3,7 +3,7 @@
 public class Order {
 
   int i;
-  double cost = 0;
+  double totalCost = 0;
   String pizzas = "";
 
 
@@ -12,9 +12,10 @@ public class Order {
 
     CheesePizza cheesePizza = new CheesePizza();
     String additions = cheesePizza.addIngredient(extraIngredient, 1.00);
-    cost += numPizzas * cheesePizza.addPrice();
+    String pricePerPizza = String.format("%.2f", cheesePizza.addPrice() + cheesePizza.ingPrice);
+    totalCost += (numPizzas * cheesePizza.addPrice()) + cheesePizza.ingPrice;
     for(i = 0; i < numPizzas; i++){
-      pizzas += "Cheese Pizza " + additions  + "$" + String.format("%.2f", cheesePizza.addPrice()) + "\n";
+      pizzas += "Cheese Pizza " + additions + "$" + pricePerPizza + "\n";
     }
 
   }
@@ -23,7 +24,7 @@ public class Order {
 
     PepperoniPizza pepperoniPizza = new PepperoniPizza();
     pepperoniPizza.addIngredient(extraIngredient, 1.00);
-    cost += numPizzas * pepperoniPizza.addPrice();
+    totalCost += numPizzas * pepperoniPizza.addPrice();
     for(i = 0; i < numPizzas; i++){
       pizzas += "Pepperoni Pizza " + "$" + String.format("%.2f", pepperoniPizza.addPrice()) + "\n";
     }
@@ -31,10 +32,7 @@ public class Order {
   }
 
   public String total() {
-
-    String totalCost = String.format("%.2f", cost);
-    return (totalCost);
-
+    return (String.format("%.2f", totalCost));
   }
 
   public String printReceipt() {

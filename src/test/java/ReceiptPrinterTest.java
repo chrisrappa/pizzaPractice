@@ -43,8 +43,10 @@ public class ReceiptPrinterTest{
     ReceiptPrinter receiptPrinter = new ReceiptPrinter(printStream, order);
     receiptPrinter.print();
 
-    verify(printStream).println( "Cheese Pizza + Pepperoni($1.00) $7.00\n" + "Total cost is: $7.00");
+    verify(printStream).println( "Cheese Pizza + Pepperoni( $1.00 ) $7.00\n" + "Total cost is: $7.00");
 
   }
+
+
 
 }
