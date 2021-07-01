@@ -9,11 +9,11 @@ public class Order {
 
   public void withCheesePizza(int numPizzas, String extraIngredient) {
 
-
     CheesePizza cheesePizza = new CheesePizza();
     String additions = cheesePizza.addIngredient(extraIngredient, 1.00);
     String pricePerPizza = String.format("%.2f", cheesePizza.addPrice() + cheesePizza.ingPrice);
     totalCost += (numPizzas * cheesePizza.addPrice()) + cheesePizza.ingPrice;
+
     for(i = 0; i < numPizzas; i++){
       pizzas += "Cheese Pizza " + additions + "$" + pricePerPizza + "\n";
     }
@@ -23,10 +23,12 @@ public class Order {
   public void withPepperoniPizza(int numPizzas, String extraIngredient) {
 
     PepperoniPizza pepperoniPizza = new PepperoniPizza();
-    pepperoniPizza.addIngredient(extraIngredient, 1.00);
-    totalCost += numPizzas * pepperoniPizza.addPrice();
+    String additions = pepperoniPizza.addIngredient(extraIngredient, 1.00);
+    String pricePerPizza = String.format("%.2f", pepperoniPizza.addPrice() + pepperoniPizza.ingPrice);
+    totalCost += (numPizzas * pepperoniPizza.addPrice()) + pepperoniPizza.ingPrice;
+
     for(i = 0; i < numPizzas; i++){
-      pizzas += "Pepperoni Pizza " + "$" + String.format("%.2f", pepperoniPizza.addPrice()) + "\n";
+      pizzas += "Pepperoni Pizza " + additions + "$" + pricePerPizza + "\n";
     }
 
   }

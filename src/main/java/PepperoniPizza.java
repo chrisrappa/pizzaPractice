@@ -2,6 +2,7 @@ import Interfaces.Pizza;
 
 public class PepperoniPizza implements Pizza {
 
+  double ingPrice = 0;
 
   @Override
   public double addPrice() {
@@ -10,7 +11,14 @@ public class PepperoniPizza implements Pizza {
 
   @Override
   public String addIngredient(String ingredient, double price) {
-    String pricePerAddition = Double.toString(price);
-    return (ingredient + "(" + pricePerAddition + ") ");
+    ingPrice += price;
+    addIngPrice(ingPrice);
+    String pricePerAddition = String.format("%.2f", price);
+    return ("+ " + ingredient + "( $" + pricePerAddition + " ) ");
+  }
+
+
+  public double addIngPrice(double ingPrice){
+    return(ingPrice);
   }
 }
