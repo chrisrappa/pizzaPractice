@@ -9,7 +9,7 @@ public class OrderTest {
     Order order = new Order();
 
     order.withCheesePizza(1, "", "", "", ""
-            , "", "", "", "");
+            , "", "", "", "", "Regular");
     order.total();
 
     assertEquals("6.00", order.total());
@@ -20,7 +20,7 @@ public class OrderTest {
       Order order = new Order();
 
       order.withCheesePizza(2, "", "", "",
-            "", "", "", "", "");
+            "", "", "", "", "", "Regular");
 
       order.total();
 
@@ -31,7 +31,8 @@ public class OrderTest {
   public void shouldHaveOnePepperoniPizza(){
     Order order = new Order();
 
-    order.withPepperoniPizza(1, "");
+    order.withPepperoniPizza(1, "", "", "", ""
+            , "", "", "", "", "Regular");
     order.total();
 
     assertEquals("7.00", order.total());
@@ -41,9 +42,10 @@ public class OrderTest {
   public void shouldHaveOnePepperoniPizzaAndOneCheeseThenReturnCostOfBoth(){
     Order order = new Order();
 
-    order.withPepperoniPizza(1, "");
+    order.withPepperoniPizza(1, "", "", "", ""
+            , "", "", "", "", "Regular");
     order.withCheesePizza(1, "", "", "", ""
-            , "", "", "", "");
+            , "", "", "", "", "Regular");
 
     assertEquals("13.00", order.total());
   }
@@ -52,7 +54,8 @@ public class OrderTest {
   public void printReceiptIncludesIndividualPizzas() {
       Order order = new Order();
 
-      order.withPepperoniPizza(1, "");
+      order.withPepperoniPizza(1, "", "", "", ""
+              , "", "", "", "", "Regular");
       assertEquals("Pepperoni Pizza $7.00\nTotal cost is: $7.00", order.printReceipt());
 
   }

@@ -6,13 +6,13 @@ public class Main {
 
   public static void main(String[] args) {
     Order order = new Order();
-    List<String> ingredientAdditions = Arrays.asList("");
     order.withCheesePizza(1, "Pepperoni", "Onions",
             "Mushrooms", "Green Pepper",
             "Sausage", "Ham",
-            "Olives", "Beef");
+            "Olives", "Beef", "Large");
 
-    order.withPepperoniPizza(1, "Onions");
+    order.withPepperoniPizza(1, "Onions", "", "",
+            "", "", "", "",  "", "Regular");
 
     new ReceiptPrinter(System.out, order).print();
 

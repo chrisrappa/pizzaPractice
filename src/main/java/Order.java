@@ -6,7 +6,7 @@ public class Order {
   int i;
   double totalCost = 0;
   String pizzas = "";
-  String additions = "";
+
 
 
   public void withCheesePizza(int numPizzas,
@@ -17,9 +17,10 @@ public class Order {
                               String ingredientFive,
                               String ingredientSix,
                               String ingredientSeven,
-                              String ingredientEight) {
+                              String ingredientEight, String size) {
 
     CheesePizza cheesePizza = new CheesePizza();
+    String additions = "";
     List<String> ingredients = Arrays.asList(ingredientOne,
             ingredientTwo, ingredientThree, ingredientFour, ingredientFive,
             ingredientSix, ingredientSeven, ingredientEight);
@@ -28,24 +29,40 @@ public class Order {
       additions += cheesePizza.addIngredient(ingredient, 1.00);
     }
 
-    String pricePerPizza = String.format("%.2f", cheesePizza.addPrice() + cheesePizza.ingPrice);
-    totalCost += (numPizzas * cheesePizza.addPrice()) + cheesePizza.ingPrice;
+    String pricePerPizza = String.format("%.2f", cheesePizza.addPrice(size) + cheesePizza.ingPrice);
+    totalCost += (numPizzas * cheesePizza.addPrice(size)) + cheesePizza.ingPrice;
 
     for(i = 0; i < numPizzas; i++){
-      pizzas += "Cheese Pizza " + additions + "$" + pricePerPizza + "\n";
+      pizzas += size + " Cheese Pizza " + additions + "$" + pricePerPizza + "\n";
     }
 
   }
 
-  public void withPepperoniPizza(int numPizzas, String extraIngredient) {
+  public void withPepperoniPizza(int numPizzas,
+                                 String ingredientOne,
+                                 String ingredientTwo,
+                                 String ingredientThree,
+                                 String ingredientFour,
+                                 String ingredientFive,
+                                 String ingredientSix,
+                                 String ingredientSeven,
+                                 String ingredientEight, String size) {
 
     PepperoniPizza pepperoniPizza = new PepperoniPizza();
-    String additions = pepperoniPizza.addIngredient(extraIngredient, 1.00);
-    String pricePerPizza = String.format("%.2f", pepperoniPizza.addPrice() + pepperoniPizza.ingPrice);
-    totalCost += (numPizzas * pepperoniPizza.addPrice()) + pepperoniPizza.ingPrice;
+    String additions = "";
+    List<String> ingredients = Arrays.asList(ingredientOne,
+            ingredientTwo, ingredientThree, ingredientFour, ingredientFive,
+            ingredientSix, ingredientSeven, ingredientEight);
+
+    for(String ingredient : ingredients){
+      additions += pepperoniPizza.addIngredient(ingredient, 1.00);
+    }
+
+    String pricePerPizza = String.format("%.2f", pepperoniPizza.addPrice(size) + pepperoniPizza.ingPrice);
+    totalCost += (numPizzas * pepperoniPizza.addPrice(size)) + pepperoniPizza.ingPrice;
 
     for(i = 0; i < numPizzas; i++){
-      pizzas += "Pepperoni Pizza " + additions + "$" + pricePerPizza + "\n";
+      pizzas += size + " Pepperoni Pizza " + additions + "$" + pricePerPizza + "\n";
     }
 
   }

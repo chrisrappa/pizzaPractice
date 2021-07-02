@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ReceiptPrinterTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-07-02T21:01:34" hostname="rappac-a01.vmware.com" time="0.106">
+<testsuite name="ReceiptPrinterTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-02T22:16:55" hostname="rappac-a01.vmware.com" time="0.084">
   <properties/>
-  <testcase name="shouldPrintReceiptForSixDollarsWhenOrderHasTotalPriceOfSixDollars" classname="ReceiptPrinterTest" time="0.1"/>
-  <testcase name="AddOneIngredientToCheesePizzaForOneDollarExtraAndUpdatePriceWithIngredietName" classname="ReceiptPrinterTest" time="0.001"/>
-  <testcase name="AddMultipleIngredientsAndHaveThemPrintOutEachWithPricePerAndAffectingTotalPrice" classname="ReceiptPrinterTest" time="0.002"/>
-  <testcase name="AddOneIngredientToEachPizzaAndPrintPricePerIngAsWellAsAffectingTotalCostOfEachPizzaAsWellAsTotalOrder" classname="ReceiptPrinterTest" time="0.001"/>
+  <testcase name="IfCustomerSelectsLargePizzaWithTwoIngredientsTheTotalShouldBeElevenDollars" classname="ReceiptPrinterTest" time="0.084"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

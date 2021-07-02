@@ -7,9 +7,15 @@ public class PepperoniPizza implements Pizza {
 
   double ingPrice = 0;
 
+
   @Override
-  public double addPrice() {
-    return 7.00;
+  public double addPrice(String size) {
+    switch(size){
+      case "Large":
+        return 10.00;
+      default:
+        return 7.00;
+    }
   }
 
   @Override
