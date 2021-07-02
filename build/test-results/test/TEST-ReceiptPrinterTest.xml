@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ReceiptPrinterTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-01T00:51:50" hostname="rappac-a01.vmware.com" time="0.081">
+<testsuite name="ReceiptPrinterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-07-02T20:01:54" hostname="rappac-a01.vmware.com" time="0.081">
   <properties/>
-  <testcase name="AddOneIngredientToEachPizzaAndPrintPricePerIngAsWellAsAffectingTotalCostOfEachPizzaAsWellAsTotalOrder" classname="ReceiptPrinterTest" time="0.081"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="shouldPrintReceiptForSixDollarsWhenOrderHasTotalPriceOfSixDollars" classname="ReceiptPrinterTest" time="0.079"/>
+  <testcase name="AddOneIngredientToCheesePizzaForOneDollarExtraAndUpdatePriceWithIngredietName" classname="ReceiptPrinterTest" time="0.001"/>
+  <testcase name="AddOneIngredientToEachPizzaAndPrintPricePerIngAsWellAsAffectingTotalCostOfEachPizzaAsWellAsTotalOrder" classname="ReceiptPrinterTest" time="0.001"/>
+  <system-out><![CDATA[
++ Pepperoni( $1.00 ) 
++ Pepperoni( $1.00 ) 
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -11,6 +11,7 @@ public class Order {
 
     CheesePizza cheesePizza = new CheesePizza();
     String additions = cheesePizza.addIngredient(extraIngredient, 1.00);
+    System.out.println(additions);
     String pricePerPizza = String.format("%.2f", cheesePizza.addPrice() + cheesePizza.ingPrice);
     totalCost += (numPizzas * cheesePizza.addPrice()) + cheesePizza.ingPrice;
 
