@@ -56,7 +56,7 @@ public class OrderTest {
 
       order.withPepperoniPizza(1, "", "", "", ""
               , "", "", "", "", "Regular");
-      assertEquals("Pepperoni Pizza $7.00\nTotal cost is: $7.00", order.printReceipt());
+      assertEquals("Regular Pepperoni Pizza $7.00\nTotal cost is: $7.00", order.printReceipt());
 
   }
 
