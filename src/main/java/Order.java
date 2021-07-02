@@ -1,17 +1,33 @@
-
+import java.util.Arrays;
+import java.util.List;
 
 public class Order {
 
   int i;
   double totalCost = 0;
   String pizzas = "";
+  String additions = "";
 
 
-  public void withCheesePizza(int numPizzas, String extraIngredient) {
+  public void withCheesePizza(int numPizzas,
+                              String ingredientOne,
+                              String ingredientTwo,
+                              String ingredientThree,
+                              String ingredientFour,
+                              String ingredientFive,
+                              String ingredientSix,
+                              String ingredientSeven,
+                              String ingredientEight) {
 
     CheesePizza cheesePizza = new CheesePizza();
-    String additions = cheesePizza.addIngredient(extraIngredient, 1.00);
-    System.out.println(additions);
+    List<String> ingredients = Arrays.asList(ingredientOne,
+            ingredientTwo, ingredientThree, ingredientFour, ingredientFive,
+            ingredientSix, ingredientSeven, ingredientEight);
+
+    for(String ingredient : ingredients){
+      additions += cheesePizza.addIngredient(ingredient, 1.00);
+    }
+
     String pricePerPizza = String.format("%.2f", cheesePizza.addPrice() + cheesePizza.ingPrice);
     totalCost += (numPizzas * cheesePizza.addPrice()) + cheesePizza.ingPrice;
 

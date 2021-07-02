@@ -18,16 +18,11 @@ public class CheesePizza implements Pizza {
       return "";
     }
 
-    ArrayList<String> addedIngredients = new ArrayList<>();
-    addedIngredients.add(0, ingredient);
-    for(int i = 0; i < addedIngredients.size() ; i++){
-      ingPrice += price;
-    }
-
+    ingPrice += price;
     addIngPrice(ingPrice);
+
     String pricePerAddition = String.format("%.2f", price);
     return ("+ " + ingredient + "( $" + pricePerAddition + " ) ");
-
   }
 
   public double addIngPrice(double ingPrice){

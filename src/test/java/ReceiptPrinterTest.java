@@ -12,7 +12,9 @@ public class ReceiptPrinterTest{
   public void shouldPrintReceiptForSixDollarsWhenOrderHasTotalPriceOfSixDollars() {
     Order order = new Order();
     PrintStream printStream = mock(PrintStream.class);
-    order.withCheesePizza(1, "");
+    order.withCheesePizza(1, "", "", "", "",
+            "", "", "", "");
+
     ReceiptPrinter receiptPrinter = new ReceiptPrinter(printStream, order);
     receiptPrinter.print();
 
@@ -22,7 +24,8 @@ public class ReceiptPrinterTest{
   @Test
   public void AddOneIngredientToCheesePizzaForOneDollarExtraAndUpdatePriceWithIngredietName(){
     Order order = new Order();
-    order.withCheesePizza(1, "Pepperoni");
+    order.withCheesePizza(1, "Pepperoni", "", "", "",
+            "", "", "", "");
 
     PrintStream printStream = mock(PrintStream.class);
     ReceiptPrinter receiptPrinter = new ReceiptPrinter(printStream, order);
@@ -36,7 +39,9 @@ public class ReceiptPrinterTest{
   public void AddOneIngredientToEachPizzaAndPrintPricePerIngAsWellAsAffectingTotalCostOfEachPizzaAsWellAsTotalOrder(){
     Order order = new Order();
 
-    order.withCheesePizza(1, "Pepperoni");
+    order.withCheesePizza(1, "Pepperoni", "", "", "",
+            "", "", "", "");
+
     order.withPepperoniPizza(1, "Onions");
 
     PrintStream printStream = mock(PrintStream.class);
@@ -49,19 +54,19 @@ public class ReceiptPrinterTest{
 
   }
 
-//  @Test
-//  public void AddMultipleIngredientsAndHaveThemPrintOutEachWithPricePerAndAffectingTotalPrice(){
-//    Order order = new Order();
-//
-//    order.withCheesePizza(1, "Pepperoni", "Onions", "Mushrooms", "Green Pepper", "Sausage", "Ham", "Olives", "Beef");
-//
-//    PrintStream printStream = mock(PrintStream.class);
-//    ReceiptPrinter receiptPrinter = new ReceiptPrinter(printStream, order);
-//    receiptPrinter.print();
-//
-//    verify(printStream).println( "Cheese Pizza + Pepperoni( $1.00 ) + onions( $1.00 ) + mushrooms( $1.00 ) + green pepper( $1.00 ) + sausage( $1.00 ) + ham( $1.00 ) + olives( $1.00 ) + beef( $1.00 ) $14.00\n"
-//            + "Total cost is: $15.00");
-//  }
+  @Test
+  public void AddMultipleIngredientsAndHaveThemPrintOutEachWithPricePerAndAffectingTotalPrice(){
+    Order order = new Order();
+
+    order.withCheesePizza(1, "Pepperoni", "Onions", "Mushrooms", "Green Pepper", "Sausage", "Ham", "Olives", "Beef");
+
+    PrintStream printStream = mock(PrintStream.class);
+    ReceiptPrinter receiptPrinter = new ReceiptPrinter(printStream, order);
+    receiptPrinter.print();
+
+    verify(printStream).println( "Cheese Pizza + Pepperoni( $1.00 ) + Onions( $1.00 ) + Mushrooms( $1.00 ) + Green Pepper( $1.00 ) + Sausage( $1.00 ) + Ham( $1.00 ) + Olives( $1.00 ) + Beef( $1.00 ) $14.00\n"
+            + "Total cost is: $14.00");
+  }
 
 
 }

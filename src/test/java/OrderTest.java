@@ -8,7 +8,8 @@ public class OrderTest {
   public void shouldHaveSixDollarReceiptForCheesePizza() {
     Order order = new Order();
 
-    order.withCheesePizza(1, "");
+    order.withCheesePizza(1, "", "", "", ""
+            , "", "", "", "");
     order.total();
 
     assertEquals("6.00", order.total());
@@ -18,7 +19,9 @@ public class OrderTest {
   public void shouldHave2CheesePizzasAndReturnCostOfBoth() {
       Order order = new Order();
 
-      order.withCheesePizza(2, "");
+      order.withCheesePizza(2, "", "", "",
+            "", "", "", "", "");
+
       order.total();
 
       assertEquals("12.00", order.total());
@@ -39,7 +42,8 @@ public class OrderTest {
     Order order = new Order();
 
     order.withPepperoniPizza(1, "");
-    order.withCheesePizza(1, "");
+    order.withCheesePizza(1, "", "", "", ""
+            , "", "", "", "");
 
     assertEquals("13.00", order.total());
   }
